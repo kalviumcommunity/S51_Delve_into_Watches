@@ -14,6 +14,6 @@ app.get("/ping",(req,res)=>{
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`🚀 server running on PORT: ${port}`);
-  });
+  })
 }
 
