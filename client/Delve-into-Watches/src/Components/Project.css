@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+
+*{
+    background-color: black;
+}
+
+.Sample{
+    color: rgb(255, 255, 255);
+}
+
+h2{
+  font-family: 'Italiana', sans-serif;
+  font-size:35px;
+}
+
+
