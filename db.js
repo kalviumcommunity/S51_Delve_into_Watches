@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const mongoURI= "mongodb+srv://Adhithyaa:adhi@adhithyaa.k4o655v.mongodb.net/Adhithyaa?retryWrites=true&w=majority"
-
-
 const startDatabase = async () => {
   try {
     await mongoose.connect(mongoURI);
@@ -10,7 +8,6 @@ const startDatabase = async () => {
     console.error('❌ error connecting to MongoDB:', err.message);
   }
 };
-
 const stopDatabase = async () => {
   try {
     await mongoose.disconnect();
@@ -19,9 +16,9 @@ const stopDatabase = async () => {
     console.error('❌ error disconnecting from MongoDB:', err.message);
   }
 };
-
 const isConnected = () => {
   return mongoose.connection.readyState === 1;
 }
-
 module.exports = { startDatabase, stopDatabase, isConnected };
+
+
