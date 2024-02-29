@@ -1,0 +1,12 @@
+.input{
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+#submit{
+    background-color: black;
+    color: wheat;
+    position: relative;
+    top: 20px;
+}
