@@ -11,7 +11,7 @@
 
 
 h1{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: 'Italiana', sans-serif;
   font-weight: 200;
   margin-bottom: 10px;
@@ -19,7 +19,7 @@ h1{
 
 p{
   font-family: 'Times New Roman', Times, serif;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 
