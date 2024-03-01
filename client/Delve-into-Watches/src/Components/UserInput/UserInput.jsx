@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./UserInput.css";
+import { useNavigate } from "react-router-dom";
 
 const UserInput = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const UserInput = () => {
     Company: "", // Updated to match the provided data
     ProducedYear: "", // Updated to match the provided data
   });
+  const navigate = useNavigate() 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +27,7 @@ const UserInput = () => {
       // Sending data to the server using axios post request
       console.log(formData);
       const res = await axios.post("https://delve-into-watches.onrender.com/post", formData);
-
+      navigate('/')
       // Logging the response data to the console
       console.log(res.data);
     } catch (error) {
