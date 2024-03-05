@@ -9,25 +9,13 @@ const cookieParser = require('cookie-parser');
 const cors = require("cors")
 
 app.use(cors())
-
-app.use(cookieParser());
 app.use(bodyParser.json())
 app.use("/",getRouter)
 app.use("/",postRouter)
 app.use("/",patchRouter)
 app.use("/",deleteRouter)
 
-app.post('/login', (req, res) => {
-  const { username } = req.body;
-  res.cookie('username', username);
-  res.send('Login successful');
-});
 
-
-app.get('/logout', (req, res) => {
-  res.clearCookie('username');
-  res.send('Logout successful');
-});
 
 app.get('/', (req, res) => {
   res.json({
