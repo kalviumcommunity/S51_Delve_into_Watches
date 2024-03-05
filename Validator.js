@@ -1,6 +1,5 @@
 const Joi = require("joi");
 
-
 const validtor = (schema)=> (data) =>
     schema.validate(data, {abortEarly: false})
 const uppo = Joi.object({
