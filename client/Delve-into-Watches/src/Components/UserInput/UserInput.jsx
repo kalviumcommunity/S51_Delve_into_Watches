@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 const UserInput = () => {
   const [formData, setFormData] = useState({
-    WatchID: "", 
-    ModelName: "", 
-    Company: "", 
-    ProducedYear: "", 
+    WatchID: "", // Updated to match the provided data
+    ModelName: "", // Updated to match the provided data
+    Company: "", // Updated to match the provided data
+    ProducedYear: "", // Updated to match the provided data
   });
   const navigate = useNavigate() 
 
@@ -24,14 +24,14 @@ const UserInput = () => {
     event.preventDefault();
 
     try {
-      
+      // Sending data to the server using axios post request
       console.log(formData);
       const res = await axios.post("https://delve-into-watches.onrender.com/post", formData);
       navigate('/')
-      
+      // Logging the response data to the console
       console.log(res.data);
     } catch (error) {
-      
+      // Handling errors
       console.error("Error during form submission:", error);
     }
   };
@@ -39,27 +39,26 @@ const UserInput = () => {
   return (
     <form onSubmit={handleSubmit}>
         <div className="input">
-
-      <label id="l">
-        Watch ID :
+      <label>
+        Watch ID:
         <input type="text" name="WatchID" value={formData.WatchID} onChange={handleChange} />
       </label>
       <br />
 
-      <label id="l">
-        Model Name : 
+      <label>
+        Model Name:
         <input type="text" name="ModelName" value={formData.ModelName} onChange={handleChange} />
       </label>
       <br />
 
-      <label id="l">
-        Company :
+      <label>
+        Company:
         <input type="text" name="Company" value={formData.Company} onChange={handleChange} />
       </label>
       <br />
 
-      <label id="l">
-        Produced Year :
+      <label>
+        Produced Year:
         <input type="number" name="ProducedYear" value={formData.ProducedYear} onChange={handleChange} />
       </label>
       <br />

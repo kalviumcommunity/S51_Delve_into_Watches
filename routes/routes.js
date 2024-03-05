@@ -4,7 +4,7 @@ const postRouter = express.Router()
 const patchRouter = express.Router()
 const deleteRouter = express.Router()
 const Watches = require("../models/watches.model")
-const upap = require("../Validator")
+
 
 getRouter.get('/get',async(req,res)=>{
     try{
@@ -16,34 +16,22 @@ getRouter.get('/get',async(req,res)=>{
 })
 
 postRouter.post('/post',async(req,res)=>{
-    try{ 
-        const {error,value}=upap(req.body)
-        if(error){
-            return res.status(400).json(error.details)
-        } else{
+    try{
         console.log(req.body)
         const {WatchID,ModelName,Company,ProducedYear}=req.body;
         const newWatch = await Watches.create({WatchID,ModelName,Company,ProducedYear});
         console.log('new',newWatch);
         res.status(200).json(newWatch);
-        }
     } catch(err){
         console.error(err);
         return res.status(500).send({
             error: 'Something went wrong'       
         });
     }
-
 });
 
 patchRouter.patch('/patch/:watchId',async(req,res)=>{
     try{
-        console.log("take 1")
-        const {error,value}=upap(req.body)
-        if(error){  
-            console.log("take 2")
-            return res.status(400).json(error.details)
-        } else{
         const{watchId}=req.params;
         const updatedFields = req.body;
 
@@ -55,7 +43,6 @@ patchRouter.patch('/patch/:watchId',async(req,res)=>{
         
         console.log("updated",updatedWatches);
         res.status(200).json(updatedWatches);
-    }
 
     } catch(err){
         console.error(err);

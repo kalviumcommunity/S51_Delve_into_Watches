@@ -22,12 +22,7 @@ p{
   color: rgb(0, 0, 0);
 }
 
-#add{
-  position:relative;
-  bottom: 5px;
-  background-color: black;
-  color: wheat;
-}
+
 
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
