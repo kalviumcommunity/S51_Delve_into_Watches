@@ -5,7 +5,10 @@ const app = express();
 const port = 3000;
 const {getRouter,postRouter,patchRouter,deleteRouter} = require('./routes/routes')
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser');
+const cors = require("cors")
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use("/",getRouter)
 app.use("/",postRouter)
