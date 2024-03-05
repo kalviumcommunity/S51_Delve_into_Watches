@@ -1,7 +1,8 @@
 .input{
     color: black;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    height: 100px;
 }
 
 #submit{
@@ -9,4 +10,9 @@
     color: wheat;
     position: relative;
     top: 20px;
+}
+
+#l{
+    height: 20px;
+    
 }

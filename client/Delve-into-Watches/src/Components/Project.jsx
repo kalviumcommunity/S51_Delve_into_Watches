@@ -32,9 +32,9 @@ function DelveIntoWatch() {
   }
 
   return (
-    
+    <>
+    <Link to='/insert'><button id='add'>ADD</button></Link>
     <div className='Sample'>
-      <Link to='/insert'><button>ADD</button></Link>
       {data && data.map((watch) => (
         <div className='card' key={watch.WatchID}>
           <strong>WatchID:</strong> {watch.WatchID} <br />  
@@ -49,6 +49,7 @@ function DelveIntoWatch() {
         </div>
       ))}
     </div>
+    </>
   );
 }
 
