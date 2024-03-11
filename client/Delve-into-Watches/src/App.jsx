@@ -4,6 +4,8 @@ import DelveIntoWatch from './Components/Project'
 import UserInput from './Components/UserInput/UserInput'
 import Update from "./Components/Update"
 import { BrowserRouter,Route,Routes } from 'react-router-dom'
+import LoginPage from './Components/Login'
+
 // import UserInput from "./Components/UserInput/UserInput.jsx"
 // import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
@@ -24,6 +26,8 @@ function App() {
           <Route path='/' element={<DelveIntoWatch/>}></Route>
           <Route path='/insert' element={<UserInput/>}></Route>
           <Route path='/update/:id' element={<Update/>}></Route>
+          <Route path='/Login' element={<LoginPage/>}></Route>
+          
         </Routes>
       </BrowserRouter>
 
