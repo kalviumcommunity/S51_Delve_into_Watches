@@ -5,7 +5,7 @@ const WatchesSchema = new mongoose.Schema({
     ModelName : {type : String},
     Company : {type : String},
     ProducedYear : {type : String},
-    
+    Createdby : {type:String}
 },);
 
 module.exports = mongoose.model('watches',WatchesSchema);
